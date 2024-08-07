@@ -255,3 +255,14 @@ title("Alpine marmot - close-up shrill call: right channel (recovered)");
 xlabel("Time [s]");
 axis tight;
 saveas(gcf,"marmot_recovered","pdf");
+
+'''
+% Thresh function
+function result = thresh(f_, a_)
+%
+abs_f = abs(f_);
+idx_a = find(abs_f >= a_);
+result = zeros(length(f_), 1);
+result(idx_a) = f_(idx_a);
+return
+'''
